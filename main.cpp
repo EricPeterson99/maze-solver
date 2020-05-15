@@ -9,8 +9,8 @@ int main() {
     bool run = true;
     char input;
 
-    int rowMax = 7;
-    int colMax = 50;
+    int rowMax = 10;
+    int colMax = 30;
 
     Maze *maze = new Maze(rowMax, colMax);
 

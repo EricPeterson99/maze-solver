@@ -13,7 +13,7 @@ using namespace std;
 Maze::Maze(int rows, int cols)
 {
     numOfRows = rows;
-    numOfCols =cols;
+    numOfCols = cols;
 
     //Fill vector with walls
     for (int i = 0; i < numOfRows; i++) {
@@ -32,7 +32,14 @@ void Maze::initialize(int rows, int cols)
 
 void Maze::generate()
 {
+    //Create Path
     Visit(0,0);
+
+    // Make sure that the end node is free
+    maze[numOfRows-2][numOfCols-1].state = OPEN;
+    maze[numOfRows-1][numOfCols-2].state = OPEN;
+
+    //Change start and end state to reflect that
     maze[0][0].state = 'S';
     maze[numOfRows-1][numOfCols-1].state = 'E';
 }
@@ -140,9 +147,9 @@ void Maze::print(vector<vector<Node>> maze)
         for (int j = 0; j < maze[i].size(); j++)
         {
             if (maze[i][j].state == WALL) {
-                cout << 'X';
+                cout << "■";
             } else if (maze[i][j].state == PATH) {
-                cout << '*';
+                cout << "·";
             } else if (maze[i][j].state == OPEN){
                 cout << ' ';
             } else {
