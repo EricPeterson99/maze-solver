@@ -4,6 +4,8 @@
 #include "node.h"
 #include <vector>
 
+using namespace std;
+
 class Maze
 {
 public:
@@ -19,6 +21,7 @@ private:
     int numOfCols;
 
     void Visit(int x, int y);
+    void print(vector<vector<Node>> maze);
 };
 
 #endif

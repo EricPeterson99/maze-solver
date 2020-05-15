@@ -33,7 +33,8 @@ void Maze::initialize(int rows, int cols)
 void Maze::generate()
 {
     Visit(0,0);
-    maze[numOfRows-1][numOfCols-1].state = PATH;
+    maze[0][0].state = 'S';
+    maze[numOfRows-1][numOfCols-1].state = 'E';
 }
 
 void Maze::Visit(int x, int y)
@@ -108,7 +109,7 @@ void Maze::solve(char approach)
         //BFS
         case 'b':
         case 'B':
-            maze = breathFistSearch(maze, make_tuple(0,0), make_tuple(numOfRows-1,numOfCols-1));
+            print(breathFistSearch(maze, make_tuple(0,0), make_tuple(numOfRows-1,numOfCols-1)));
             break;
 
         //DFS
@@ -121,23 +122,43 @@ void Maze::solve(char approach)
 
 void Maze::print()
 {
+    print(maze);
+}
+
+void Maze::print(vector<vector<Node>> maze)
+{
+    // Create the top bar
+    for(int i = 0; i <= maze[0].size(); i++)
+    {
+        cout << "__";
+    }
+    cout << endl;
+
     // Displaying the 2D vector
     for (int i = 0; i < maze.size(); i++) {
+        cout << '|';
         for (int j = 0; j < maze[i].size(); j++)
         {
             if (maze[i][j].state == WALL) {
                 cout << 'X';
             } else if (maze[i][j].state == PATH) {
                 cout << '*';
-            } else {
+            } else if (maze[i][j].state == OPEN){
                 cout << ' ';
+            } else {
+                cout << char(maze[i][j].state);
             }
             cout << ' ';
         }
+        cout << '|';
         cout << endl;
     }
+
+    // Create the bottom bar
+    for(int i = 0; i <= maze[0].size(); i++)
+    {
+        cout << "‾‾";
+    }
     cout << endl;
-    printf("\033[2J");
-    printf("\033[%d;%dH", 0, 0);
 }
 
