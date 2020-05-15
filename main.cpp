@@ -5,13 +5,12 @@
 using namespace std;
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-
     bool run = true;
     char input;
 
-    int rowMax = 20;
-    int colMax = 80;
+    // Define max maze size
+    int rowMax = 5;
+    int colMax = 18;
 
     Maze *maze = new Maze(rowMax, colMax);
     maze -> generate();
@@ -29,6 +28,7 @@ int main() {
         {
             case 'g':
             case 'G':
+                // Generate a random maze that is greater than 5x5
                 maze = new Maze(rand() % rowMax + 5, rand() % colMax + 5);
                 maze -> generate();
                 break;
@@ -44,8 +44,7 @@ int main() {
                 printf("What algorithm would you like:\n"
                        "A - A*\n"
                        "K - Dijkstra's\n"
-                       "B - BFS\n"
-                       "D - DFS\n");
+                       "B - BFS\n");
                 cin >> approach;
                 maze -> solve(approach);
                 break;

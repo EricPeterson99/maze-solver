@@ -4,8 +4,6 @@
 #include <list>
 #include <algorithm>
 #include <cmath>
-#include <iterator>
-#include <iostream>
 
 #define OPEN 0
 #define WALL 1
@@ -15,15 +13,13 @@ using namespace std;
 
 vector<vector<Node>> aStar(vector<vector<Node>> maze, tuple <int, int> start, tuple <int, int> goal)
 {
+    bool found = false;
+    tuple<int,int> current;
+    list <tuple<int,int>> openList, closedList;
+
+    // define start and end parents to be none
     maze[get<0>(start)][get<1>(start)].parent = make_tuple(-1,-1);
     maze[get<0>(goal)][get<1>(goal)].parent = make_tuple(-1,-1);
-
-    bool found = false;
-
-    tuple<int,int> current;
-
-    //create open and closed list
-    list <tuple<int,int>> openList, closedList;
 
     //add start node to open
     openList.push_back(start);
@@ -31,7 +27,7 @@ vector<vector<Node>> aStar(vector<vector<Node>> maze, tuple <int, int> start, tu
     //while open list is not empty
     while(!openList.empty() || !found)
     {
-        //Get the current node
+        //Get the current node with the shortest f
         current = openList.front();
         list <tuple<int,int>> :: iterator it;
         for(it = openList.begin(); it != openList.end(); ++it)
@@ -52,24 +48,16 @@ vector<vector<Node>> aStar(vector<vector<Node>> maze, tuple <int, int> start, tu
         }
         else
         {
-            //Expand all children
+            //Expand to all children
             vector<int> directions = {'U', 'D', 'L', 'R'};
             for(int i = 0; i < 4; i++) {
                 int dy = 0, dx = 0;
 
                 switch (directions[i]) {
-                    case 'U':
-                        dy = -1;
-                        break;
-                    case 'D':
-                        dy = 1;
-                        break;
-                    case 'L':
-                        dx = -1;
-                        break;
-                    case 'R':
-                        dx = 1;
-                        break;
+                    case 'U':dy = -1;break;
+                    case 'D':dy = 1;break;
+                    case 'L':dx = -1;break;
+                    case 'R': dx = 1;break;
                 }
 
                 int x2 = get<0>(current) + (dx);
@@ -96,7 +84,6 @@ vector<vector<Node>> aStar(vector<vector<Node>> maze, tuple <int, int> start, tu
                         maze[get<0>(child)][get<1>(child)].g = 1 + maze[get<0>(current)][get<1>(current)].g;
                         maze[get<0>(child)][get<1>(child)].h = sqrt( pow((get<0>(child) - get<0>(goal)), 2) + pow((get<1>(child) - get<0>(goal)), 2));
                         maze[get<0>(child)][get<1>(child)].f = maze[get<0>(child)][get<1>(child)].g + maze[get<0>(child)][get<1>(child)].h;
-                        maze[get<0>(child)][get<1>(child)].level = maze[get<0>(child)][get<1>(child)].f;
 
                         //check if child is already in the list and is better weighted
                         bool openContains = false;
@@ -158,18 +145,10 @@ vector<vector<Node>> dijkstra(vector<vector<Node>> maze, tuple <int, int> start,
                 int dy = 0, dx = 0;
 
                 switch (directions[i]) {
-                    case 'U':
-                        dy = -1;
-                        break;
-                    case 'D':
-                        dy = 1;
-                        break;
-                    case 'L':
-                        dx = -1;
-                        break;
-                    case 'R':
-                        dx = 1;
-                        break;
+                    case 'U':dy = -1;break;
+                    case 'D':dy = 1;break;
+                    case 'L':dx = -1;break;
+                    case 'R': dx = 1;break;
                 }
 
                 int x2 = get<0>(current) + (dx);
@@ -200,7 +179,10 @@ vector<vector<Node>> dijkstra(vector<vector<Node>> maze, tuple <int, int> start,
                         list <tuple<int,int>> :: iterator it;
                         for(it = openList.begin(); it != openList.end(); ++it)
                         {
-                            openContains = true;
+                            if(*it == child)
+                            {
+                                openContains = true;
+                            }
                         }
 
                         //Added child to open list if needed
@@ -239,18 +221,10 @@ vector<vector<Node>> breathFistSearch(vector<vector<Node>> maze, tuple <int, int
             int dy = 0, dx = 0;
 
             switch (directions[i]) {
-                case 'U':
-                    dy = -1;
-                    break;
-                case 'D':
-                    dy = 1;
-                    break;
-                case 'L':
-                    dx = -1;
-                    break;
-                case 'R':
-                    dx = 1;
-                    break;
+                case 'U':dy = -1;break;
+                case 'D':dy = 1;break;
+                case 'L':dx = -1;break;
+                case 'R': dx = 1;break;
             }
 
             int x2 = get<0>(current) + (dx);
@@ -303,20 +277,11 @@ vector<vector<Node>> backtrackByDistance(vector<vector<Node>> maze, tuple<int, i
         for(int i = 0; i < 4; i++)
         {
             int dy = 0, dx = 0;
-            switch(directions[i])
-            {
-                case 'U':
-                    dy = -1;
-                    break;
-                case 'D':
-                    dy = 1;
-                    break;
-                case 'L':
-                    dx = -1;
-                    break;
-                case 'R':
-                    dx = 1;
-                    break;
+            switch (directions[i]) {
+                case 'U':dy = -1;break;
+                case 'D':dy = 1;break;
+                case 'L':dx = -1;break;
+                case 'R': dx = 1;break;
             }
 
             int x2 = get<0>(current) + (dx);

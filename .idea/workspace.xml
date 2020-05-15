@@ -20,6 +20,7 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/TheMazeProject" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/TheMazeProject" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maze.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/maze.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maze.h" beforeDir="false" afterPath="$PROJECT_DIR$/maze.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solveMaze.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solveMaze.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -85,7 +86,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1589496923454</updated>
-      <workItem from="1589496924587" duration="29945000" />
+      <workItem from="1589496924587" duration="31962000" />
     </task>
     <servers />
   </component>
@@ -107,19 +108,19 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/maze.cpp</url>
-          <line>118</line>
-          <option name="timeStamp" value="12" />
+          <url>file://$PROJECT_DIR$/solveMaze.cpp</url>
+          <line>113</line>
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/maze.cpp</url>
-          <line>106</line>
-          <option name="timeStamp" value="18" />
+          <url>file://$PROJECT_DIR$/solveMaze.cpp</url>
+          <line>130</line>
+          <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>31</line>
-          <option name="timeStamp" value="26" />
+          <url>file://$PROJECT_DIR$/solveMaze.cpp</url>
+          <line>173</line>
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -25,11 +25,6 @@ Maze::Maze(int rows, int cols)
     }
 }
 
-void Maze::initialize(int rows, int cols)
-{
-    Maze(rows, cols);
-}
-
 void Maze::generate()
 {
     //Create Path
@@ -118,12 +113,12 @@ void Maze::solve(char approach)
         case 'B':
             print(breathFistSearch(maze, make_tuple(0,0), make_tuple(numOfRows-1,numOfCols-1)));
             break;
-
-        //DFS
-        case 'd':
-        case 'D':
+//
+//        //DFS
+//        case 'd':
+//        case 'D':
 //            depthFistSearch();
-            break;
+//            break;
     }
     auto end = chrono::steady_clock::now();
     auto diff = end - start;

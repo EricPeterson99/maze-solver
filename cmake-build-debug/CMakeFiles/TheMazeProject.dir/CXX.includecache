@@ -6,26 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/Users/ericpeterson/Documents/TheMazeProject/main.cpp
-iostream
--
-maze.h
-/Users/ericpeterson/Documents/TheMazeProject/maze.h
-chrono
--
-
-/Users/ericpeterson/Documents/TheMazeProject/maze.cpp
-iostream
--
-vector
--
-node.h
-/Users/ericpeterson/Documents/TheMazeProject/node.h
-maze.h
-/Users/ericpeterson/Documents/TheMazeProject/maze.h
-solveMaze.h
-/Users/ericpeterson/Documents/TheMazeProject/solveMaze.h
-
 /Users/ericpeterson/Documents/TheMazeProject/maze.h
 node.h
 /Users/ericpeterson/Documents/TheMazeProject/node.h
@@ -34,6 +14,18 @@ vector
 
 /Users/ericpeterson/Documents/TheMazeProject/node.h
 string
+-
+
+/Users/ericpeterson/Documents/TheMazeProject/solveMaze.cpp
+solveMaze.h
+/Users/ericpeterson/Documents/TheMazeProject/solveMaze.h
+queue
+-
+list
+-
+algorithm
+-
+cmath
 -
 
 /Users/ericpeterson/Documents/TheMazeProject/solveMaze.h

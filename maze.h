@@ -10,7 +10,6 @@ class Maze
 {
 public:
     Maze(int rows, int cols);
-    void initialize(int rows, int cols);
     void generate();
     void solve(char approach);
     void print();
