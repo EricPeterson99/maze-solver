@@ -1,5 +1,6 @@
 #include <iostream>
 #include "maze.h"
+#include <chrono>
 
 using namespace std;
 
@@ -9,8 +10,8 @@ int main() {
     bool run = true;
     char input;
 
-    int rowMax = 3;
-    int colMax = 3;
+    int rowMax = 20;
+    int colMax = 80;
 
     Maze *maze = new Maze(rowMax, colMax);
     maze -> generate();
@@ -28,6 +29,7 @@ int main() {
         {
             case 'g':
             case 'G':
+                maze = new Maze(rand() % rowMax + 5, rand() % colMax + 5);
                 maze -> generate();
                 break;
 

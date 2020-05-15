@@ -48,7 +48,6 @@ vector<vector<Node>> aStar(vector<vector<Node>> maze, tuple <int, int> start, tu
         //if goal
         if(current == goal)
         {
-            //Back track
             found = true;
         }
         else
@@ -78,7 +77,7 @@ vector<vector<Node>> aStar(vector<vector<Node>> maze, tuple <int, int> start, tu
                 tuple<int,int> child = make_tuple(x2,y2);
 
                 //if valid location
-                if(x2 > -1 && y2 > -1 && x2 < maze.size() && y2 < maze[1].size())
+                if(x2 > -1 && y2 > -1 && x2 < maze.size() && y2 < maze[1].size() && maze[x2][y2].state != WALL)
                 {
                     // Check if child is already in the closed list
                     bool closedContains = false;
@@ -125,7 +124,96 @@ vector<vector<Node>> aStar(vector<vector<Node>> maze, tuple <int, int> start, tu
 
 vector<vector<Node>> dijkstra(vector<vector<Node>> maze, tuple <int, int> start, tuple <int, int> goal)
 {
+    maze[get<0>(start)][get<1>(start)].parent = make_tuple(-1,-1);
+    maze[get<0>(goal)][get<1>(goal)].parent = make_tuple(-1,-1);
 
+    bool found = false;
+
+    tuple<int,int> current;
+
+    //create open and closed list
+    list <tuple<int,int>> openList, closedList;
+
+    //add start node to open
+    openList.push_back(start);
+
+    //while open list is not empty
+    while(!openList.empty() || !found)
+    {
+        //Get the current node
+        current = openList.front();
+        closedList.push_back(current);
+        openList.remove(current);
+
+        //if goal
+        if(current == goal)
+        {
+            found = true;
+        }
+        else
+        {
+            //Expand all children
+            vector<int> directions = {'U', 'D', 'L', 'R'};
+            for(int i = 0; i < 4; i++) {
+                int dy = 0, dx = 0;
+
+                switch (directions[i]) {
+                    case 'U':
+                        dy = -1;
+                        break;
+                    case 'D':
+                        dy = 1;
+                        break;
+                    case 'L':
+                        dx = -1;
+                        break;
+                    case 'R':
+                        dx = 1;
+                        break;
+                }
+
+                int x2 = get<0>(current) + (dx);
+                int y2 = get<1>(current) + (dy);
+                tuple<int,int> child = make_tuple(x2,y2);
+
+                //if valid location
+                if(x2 > -1 && y2 > -1 && x2 < maze.size() && y2 < maze[1].size() && maze[x2][y2].state != WALL)
+                {
+                    // Check if child is already in the closed list
+                    bool closedContains = false;
+                    list <tuple<int,int>> :: iterator it;
+                    for(it = closedList.begin(); it != closedList.end(); ++it)
+                    {
+                        if(*it == child)
+                        {
+                            closedContains = true;
+                        }
+                    }
+
+                    if(!closedContains)
+                    {
+                        maze[get<0>(child)][get<1>(child)].parent = current;
+                        maze[get<0>(child)][get<1>(child)].g = 1 + maze[get<0>(current)][get<1>(current)].g;
+
+                        //check if child is already in the list and is better weighted
+                        bool openContains = false;
+                        list <tuple<int,int>> :: iterator it;
+                        for(it = openList.begin(); it != openList.end(); ++it)
+                        {
+                            openContains = true;
+                        }
+
+                        //Added child to open list if needed
+                        if(!openContains)
+                        {
+                            openList.push_back(child);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return backtrackByParent(maze, goal);
 }
 
 vector<vector<Node>> breathFistSearch(vector<vector<Node>> maze, tuple <int, int> start, tuple <int, int> goal) {

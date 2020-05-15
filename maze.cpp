@@ -36,7 +36,6 @@ void Maze::generate()
     Visit(0,0);
 
     // Make sure that the end node is free
-    maze[numOfRows-2][numOfCols-1].state = OPEN;
     maze[numOfRows-1][numOfCols-2].state = OPEN;
 
     //Change start and end state to reflect that
@@ -99,6 +98,7 @@ void Maze::Visit(int x, int y)
 
 void Maze::solve(char approach)
 {
+    auto start = chrono::steady_clock::now();
     switch(approach)
     {
         // A*
@@ -110,7 +110,7 @@ void Maze::solve(char approach)
         // dijkstra's
         case 'k':
         case 'K':
-//            dijkstra();
+            print(dijkstra(maze, make_tuple(0,0), make_tuple(numOfRows-1,numOfCols-1)));
             break;
 
         //BFS
@@ -125,6 +125,10 @@ void Maze::solve(char approach)
 //            depthFistSearch();
             break;
     }
+    auto end = chrono::steady_clock::now();
+    auto diff = end - start;
+    cout << chrono::duration <double, milli> (diff).count() << " ms" << endl << endl;
+
 }
 
 void Maze::print()
