@@ -40,10 +40,11 @@ int main() {
                 char approach;
                 printf("What algorithm would you like:\n"
                        "A - A*\n"
-                       "K - Dikstra\n"
+                       "K - Dijkstra's\n"
                        "B - BFS\n"
                        "D - DFS\n");
-                //printMaze(solveMaze(maze, approach));
+                cin >> approach;
+                maze -> solve(approach);
                 break;
 
             case 'q':

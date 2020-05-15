@@ -92,6 +92,12 @@
 		<Unit filename="/Users/ericpeterson/Documents/TheMazeProject/node.h">
 			<Option target="TheMazeProject"/>
 		</Unit>
+		<Unit filename="/Users/ericpeterson/Documents/TheMazeProject/solveMaze.cpp">
+			<Option target="TheMazeProject"/>
+		</Unit>
+		<Unit filename="/Users/ericpeterson/Documents/TheMazeProject/solveMaze.h">
+			<Option target="TheMazeProject"/>
+		</Unit>
 		<Unit filename="/Users/ericpeterson/Documents/TheMazeProject/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

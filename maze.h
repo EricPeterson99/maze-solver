@@ -14,7 +14,7 @@ public:
     void print();
 
 private:
-    std::vector<std::vector<int>> maze;
+    std::vector<std::vector<Node>> maze;
     int numOfRows;
     int numOfCols;
 

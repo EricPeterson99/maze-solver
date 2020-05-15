@@ -1,12 +1,19 @@
 #ifndef NODE_H
 #define NODE_H
 
-#define OPEN 0
+#define WALL 1
 
 class Node
 {
 public:
-    int state = OPEN;
+    Node() {
+
+    }
+
+    int state = WALL;
+    int level;
+    int priority;
+    int seen = 0;
 };
 
 #endif

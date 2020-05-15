@@ -177,6 +177,33 @@ maze.cpp.s:
 	$(MAKE) -f CMakeFiles/TheMazeProject.dir/build.make CMakeFiles/TheMazeProject.dir/maze.cpp.s
 .PHONY : maze.cpp.s
 
+solveMaze.o: solveMaze.cpp.o
+
+.PHONY : solveMaze.o
+
+# target to build an object file
+solveMaze.cpp.o:
+	$(MAKE) -f CMakeFiles/TheMazeProject.dir/build.make CMakeFiles/TheMazeProject.dir/solveMaze.cpp.o
+.PHONY : solveMaze.cpp.o
+
+solveMaze.i: solveMaze.cpp.i
+
+.PHONY : solveMaze.i
+
+# target to preprocess a source file
+solveMaze.cpp.i:
+	$(MAKE) -f CMakeFiles/TheMazeProject.dir/build.make CMakeFiles/TheMazeProject.dir/solveMaze.cpp.i
+.PHONY : solveMaze.cpp.i
+
+solveMaze.s: solveMaze.cpp.s
+
+.PHONY : solveMaze.s
+
+# target to generate assembly for a file
+solveMaze.cpp.s:
+	$(MAKE) -f CMakeFiles/TheMazeProject.dir/build.make CMakeFiles/TheMazeProject.dir/solveMaze.cpp.s
+.PHONY : solveMaze.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -192,6 +219,9 @@ help:
 	@echo "... maze.o"
 	@echo "... maze.i"
 	@echo "... maze.s"
+	@echo "... solveMaze.o"
+	@echo "... solveMaze.i"
+	@echo "... solveMaze.s"
 .PHONY : help
 
 

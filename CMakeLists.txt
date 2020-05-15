@@ -3,4 +3,4 @@ project(TheMazeProject)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(TheMazeProject main.cpp maze.cpp maze.h node.h)
+add_executable(TheMazeProject main.cpp maze.cpp maze.h node.h solveMaze.cpp solveMaze.h)

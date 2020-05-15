@@ -8,4 +8,10 @@ CMakeFiles/TheMazeProject.dir/main.cpp.o: ../node.h
 CMakeFiles/TheMazeProject.dir/maze.cpp.o: ../maze.cpp
 CMakeFiles/TheMazeProject.dir/maze.cpp.o: ../maze.h
 CMakeFiles/TheMazeProject.dir/maze.cpp.o: ../node.h
+CMakeFiles/TheMazeProject.dir/maze.cpp.o: ../solveMaze.h
+
+CMakeFiles/TheMazeProject.dir/solveMaze.cpp.o: ../maze.h
+CMakeFiles/TheMazeProject.dir/solveMaze.cpp.o: ../node.h
+CMakeFiles/TheMazeProject.dir/solveMaze.cpp.o: ../solveMaze.cpp
+CMakeFiles/TheMazeProject.dir/solveMaze.cpp.o: ../solveMaze.h
 
