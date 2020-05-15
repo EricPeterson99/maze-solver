@@ -104,7 +104,7 @@ void Maze::solve(char approach)
         // A*
         case 'a':
         case 'A':
-//            aStar();
+            print(aStar(maze, make_tuple(0,0), make_tuple(numOfRows-1,numOfCols-1)));
             break;
 
         // dijkstra's

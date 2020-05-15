@@ -9,15 +9,16 @@ int main() {
     bool run = true;
     char input;
 
-    int rowMax = 10;
-    int colMax = 30;
+    int rowMax = 3;
+    int colMax = 3;
 
     Maze *maze = new Maze(rowMax, colMax);
+    maze -> generate();
 
     while (run)
     {
         printf("List of commands:\n"
-               "C - Generate new maze\n"
+               "G - Generate new maze\n"
                "P - Print maze in console\n"
                "S - Find Solution to the maze\n"
                "Q - Quit\n");
@@ -25,8 +26,8 @@ int main() {
 
         switch (input)
         {
-            case 'c':
-            case 'C':
+            case 'g':
+            case 'G':
                 maze -> generate();
                 break;
 

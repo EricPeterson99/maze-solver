@@ -13,11 +13,16 @@
   <component name="ChangeListManager">
     <list default="true" id="329ae353-24f2-410e-939c-958589c602b5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TheMazeProject.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TheMazeProject.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TheMazeProject.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TheMazeProject.dir/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TheMazeProject.dir/maze.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TheMazeProject.dir/maze.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TheMazeProject.dir/solveMaze.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TheMazeProject.dir/solveMaze.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/TheMazeProject" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/TheMazeProject" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maze.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/maze.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node.h" beforeDir="false" afterPath="$PROJECT_DIR$/node.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solveMaze.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solveMaze.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solveMaze.h" beforeDir="false" afterPath="$PROJECT_DIR$/solveMaze.h" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +87,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1589496923454</updated>
-      <workItem from="1589496924587" duration="20069000" />
+      <workItem from="1589496924587" duration="28306000" />
     </task>
     <servers />
   </component>
@@ -109,14 +114,14 @@
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/solveMaze.cpp</url>
-          <line>86</line>
-          <option name="timeStamp" value="15" />
+          <url>file://$PROJECT_DIR$/maze.cpp</url>
+          <line>106</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/solveMaze.cpp</url>
-          <line>126</line>
-          <option name="timeStamp" value="16" />
+          <line>207</line>
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
