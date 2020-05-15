@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/ericpeterson/Documents/TheMazeProject/maze.cpp
+iostream
+-
+vector
+-
+node.h
+/Users/ericpeterson/Documents/TheMazeProject/node.h
+maze.h
+/Users/ericpeterson/Documents/TheMazeProject/maze.h
+
+/Users/ericpeterson/Documents/TheMazeProject/maze.h
+node.h
+/Users/ericpeterson/Documents/TheMazeProject/node.h
+vector
+-
+
+/Users/ericpeterson/Documents/TheMazeProject/node.h
+
