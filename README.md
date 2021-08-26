@@ -7,7 +7,7 @@ Supported searching algorithms:
 - Dijkstra's
 - BFS
 
-## Example Output
+## Example
 
 Sample generated maze:
 ```
